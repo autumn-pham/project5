@@ -1,0 +1,48 @@
+<div class="searches-display">
+  <div class="searches-data">
+    <h4>ENTRIES</h4>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Age</th>
+          <th scope="col">City</th>
+          <th scope="col">Sport</th>
+          <th scope="col">Activity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for (let i = 0; i < searches.length; i++) { %>
+          <tr>
+            <td><a href="/activities/searches/<%= searches[i].id %>"><%= searches[i].firstname%> <%=searches[i].lastname %></a> </td>
+            <td><%= searches[i].age %></td>
+            <td><%= searches[i].city %></td>
+            <td><%= searches[i].sport %></td>
+            <td><%= searches[i].activity %></td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+
+
+    <div class="new-search-form">
+      <h4>I am searching!</h4>
+      <form action="/activities/searches" method="POST">
+        <div class="form-group">
+          <label for="firstname">FIRST NAME:</label>
+            <input type="text" name="firstname" required /><br/>
+              <label for="lastname">LAST NAME:</label>
+              <input type="text" name="lastname" required /><br/>
+              <label for="age">AGE:</label>
+              <input type="number" name="age" /><br/>
+              <label for="city">CITY:</label>
+              <input type="text" name="city" required /><br/>
+              <label for="sport">SPORT:</label>
+              <input type="sport" name="sport" required /><br/>
+              <label for="activity">ACTIVITY:</label>
+              <input type="text" name="activity" required /><br/>
+              <input type="submit" value="ADD" class="add-btn" />
+              </div>
+          </form>
+      </div>

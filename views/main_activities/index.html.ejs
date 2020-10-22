@@ -4,58 +4,66 @@
 
   </head>
   <body>
-
-
     <!-- MAIN STATIC STUFF  -->
+    <div class="container">
+
+    <!-- DATA DISPLAY -->
+
+    <div class="data-display">
+    <!-- OFFERS -->
+
+      <div class="offers-display">
+        <div class="offers-data">
+          <h4>ENTRIES</h4>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Age</th>
+                <th scope="col">City</th>
+                <th scope="col">Sport</th>
+                <th scope="col">Activity</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% for (let i = 0; i < offers.length; i++) { %>
+                <tr>
+                  <td><a href="/activities/offers/<%= offers[i].id %>"><%= offers[i].firstname%> <%=offers[i].lastname %></a> </td>
+                  <td><%= offers[i].age %></td>
+                  <td><%= offers[i].city %></td>
+                  <td><%= offers[i].sport %></td>
+                  <td><%= offers[i].activity %></td>
+                </tr>
+                <% } %>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="new-offer-form">
+            <h4>I am offering!</h4>
+            <form action="/activities" method="POST">
+              <div class="form-group">
+                <input type="text" name="firstname" placeholder="FIRST NAME" required /><br/>
+                <input type="text" name="lastname" placeholder="LAST NAME" required /><br/>
+                <input type="number" name="age" placeholder="AGE"/><br/>
+                <input type="text" name="city" placeholder="CITY" required /><br/>
+                <input type="text" name="sport" placeholder="SPORT" required /><br/>
+                <input type="text" name="activity" placeholder="ACTIVITY" required /><br/>
+                <input type="submit" value="ADD" class="add-btn" />
+              </div>
+              </form>
+          </div>
+            <!-- CLOSING OUT OFFERS-DISPLAY -->
+          </div>
 
 
-
-    <!-- ENTRIES -->
-      <h4>ENTRIES</h4>
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-          <th scope="col">First Name</th>
-          <th scope="col">Last Name</th>
-          <th scope="col">Age</th>
-          <th scope="col">City</th>
-          <th scope="col">Sport</th>
-          <th scope="col">Activity</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% for (let i = 0; i < offers.length; i++) { %>
-          <tr>
-            <td><a href="/offers/<%= offers[i].id %>"><%= offers[i].firstname offers[i].lastname %></a> </td>
-            <td><%= offers[i].age %></td>
-            <td><%= offers[i].city %></td>
-            <td><%= offers[i].sport %></td>
-            <td><%= offers[i].activity %></td>
-          </tr>
-          <% } %>
-        </tbody>
-      </table>
+          <!-- SEARCHES -->
 
 
-      <h4>I am offering!</h4>
-      <form action="/offers" method="POST">
-                <div class="form-group">
-                  <label for="firstname">FIRST NAME:</label>
-                  <input type="text" name="firstname" required />
-                  <label for="lastname">LAST NAME:</label>
-                  <input type="text" name="lastname" required />
-                  <label for="age">AGE:</label>
-                  <input type="number" name="age" />
-                  <label for="city">CITY:</label>
-                  <input type="text" name="city" required />
-                  <label for="sport">SPORT:</label>
-                  <input type="sport" name="sport" required />
-                  <label for="activity">ACTIVITY:</label>
-                  <input type="text" name="activity" required />
-                  <input type="submit" value="ADD" class="add-btn" />
-                </div>
-          </form>
-
+    <!-- CLOSING OUT DATA-DISPLAY DIV -->
+    </div>
+<!-- CLOSING OUT CONTAINER DIV -->
+    </div>
 
     <!-- FOOTER -->
     <footer class="page-footer">

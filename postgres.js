@@ -1,7 +1,7 @@
-const Activities = require('pg').Activities
+const Client = require('pg').Client
 
-const activity = new Activity ({
+const client = new Client({
     connectionString: process.env.DATABASE_URL || 'postgresql://localhost:5432/activities',
 })
 
-module.exports = activity;
+module.exports = client;

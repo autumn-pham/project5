@@ -10,10 +10,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 
 const offersController = require('./controllers/offers.js');
-app.use('/offers', offersController);
+app.use('/activities', offersController);
 
-const searchesController = require('./controllers/searches.js');
-app.use('/searches', searchesController);
+// const searchesController = require('./controllers/searches.js');
+// app.use('/activities', searchesController);
 
 
 app.get('/' , (req, res) => {
@@ -23,5 +23,5 @@ app.get('/' , (req, res) => {
 postgres.connect();
 
 app.listen(process.env.PORT || 3000, () => {
-    console.log('listening');
+    console.log('👂 on ' + PORT);
 })
