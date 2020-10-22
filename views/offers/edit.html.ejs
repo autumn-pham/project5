@@ -7,7 +7,7 @@
   <body>
 
     <div class="container">
-      <form action="/activities/<%=offer.rows[0].id%>?_method=PUT" method="POST">
+      <form action="/offers/<%=offer.rows[0].id%>?_method=PUT" method="POST">
         <fieldset class="edit-info">
           <label for="firstname">FIRST NAME:</label>
           <input type="text" name="firstname" value="<%=offer.rows[0].firstname%>" /><br/>
@@ -25,7 +25,7 @@
         </fieldset>
         </form>
         <button type="button" name="button">
-          <a href="/activities">BACK</a>
+          <a href="/offers">BACK</a>
         </button>
     </div>
 

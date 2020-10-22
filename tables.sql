@@ -30,6 +30,19 @@ INSERT INTO searches (firstname, lastname, age, city, sport, activity) VALUES ( 
 SELECT * FROM searches;
 
 
+-- REWORKING SEARCHES TABLE FOR EASIER INDEX ROUTING
+CREATE TABLE searches2 (id SERIAL, search_firstname VARCHAR(50), search_lastname VARCHAR(50), search_age INT, search_city VARCHAR(50), search_sport VARCHAR(50), search_activity TEXT);
+
+INSERT INTO searches2 (search_firstname, search_lastname, search_age, search_city, search_sport, search_activity) VALUES ( 'Autumn', 'P', 29, 'Los Angeles', 'Muay Thai', 'pad work' );
+INSERT INTO searches2 (search_firstname, search_lastname, search_age, search_city, search_sport, search_activity) VALUES ( 'Anna', 'P', 35, 'Los Angeles', 'Muay Thai', 'pad work' );
+INSERT INTO searches (firstname, lastname, age, city, sport, activity) VALUES ( 'Alexa', 'D', 22, 'New York', 'Muay Thai', 'sparring' );
+INSERT INTO searches (firstname, lastname, age, city, sport, activity) VALUES ( 'Melissa', 'M', 25, 'New York', 'BJJ', 'grappling spar' );
+INSERT INTO searches (firstname, lastname, age, city, sport, activity) VALUES ( 'Edvin', 'C', 15, 'Los Angeles', 'Muay Thai', 'clinch' );
+INSERT INTO searches (firstname, lastname, age, city, sport, activity) VALUES ( 'Mike', 'M', 35, 'Boston', 'Muay Thai', 'sparring' );
+INSERT INTO searches (firstname, lastname, age, city, sport, activity) VALUES ( 'Shannon', 'L', 30, 'Boston', 'escrima', 'knife basics' );
+INSERT INTO searches (firstname, lastname, age, city, sport, activity) VALUES ( 'Ion', 'C', 25, 'Austin', 'escrima', 'knife basics' );
+
+
 -- JOINING
 
 SELECT offers.firstname, offers.lastname, searches.firstname, searches.lastname

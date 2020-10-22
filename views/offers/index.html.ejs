@@ -28,7 +28,7 @@
               <tbody>
                 <% for (let i = 0; i < offers.length; i++) { %>
                 <tr>
-                  <td><a href="/activities/<%= offers[i].id %>"><%= offers[i].firstname%> <%=offers[i].lastname %></a> </td>
+                  <td><a href="/offers/<%= offers[i].id %>"><%= offers[i].firstname%> <%=offers[i].lastname %></a> </td>
                   <td><%= offers[i].age %></td>
                   <td><%= offers[i].city %></td>
                   <td><%= offers[i].sport %></td>
@@ -41,7 +41,7 @@
 
           <div class="new-offer-form">
             <h4>I am offering!</h4>
-            <form action="/activities" method="POST">
+            <form action="/offers" method="POST">
               <div class="form-group">
                 <input type="text" name="firstname" placeholder="FIRST NAME" required /><br/>
                 <input type="text" name="lastname" placeholder="LAST NAME" required /><br/>
@@ -57,7 +57,6 @@
           </div>
 
 
-          <!-- SEARCHES -->
 
 
     <!-- CLOSING OUT DATA-DISPLAY DIV -->

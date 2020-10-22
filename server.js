@@ -10,10 +10,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 
 const offersController = require('./controllers/offers.js');
-app.use('/activities', offersController);
+app.use('/offers', offersController);
 
 // const searchesController = require('./controllers/searches.js');
-// app.use('/activities', searchesController);
+// app.use('/searches', searchesController);
 
 
 app.get('/' , (req, res) => {

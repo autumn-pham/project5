@@ -14,7 +14,7 @@
         <tbody>
           <% for (let i = 0; i < searches.length; i++) { %>
           <tr>
-            <td><a href="/activities/searches/<%= searches[i].id %>"><%= searches[i].firstname%> <%=searches[i].lastname %></a> </td>
+            <td><a href="/activities/<%= searches[i].id %>"><%= searches[i].firstname%> <%=searches[i].lastname %></a> </td>
             <td><%= searches[i].age %></td>
             <td><%= searches[i].city %></td>
             <td><%= searches[i].sport %></td>
@@ -28,7 +28,7 @@
 
     <div class="new-search-form">
       <h4>I am searching!</h4>
-      <form action="/activities/searches" method="POST">
+      <form action="/activities" method="POST">
         <div class="form-group">
           <label for="firstname">FIRST NAME:</label>
             <input type="text" name="firstname" required /><br/>
