@@ -37,7 +37,7 @@ offers.get('/', (req, res) => {
 
 // CREATE
 offers.post('/', (req, res) => {
-  postgres.query(`INSERT INTO offers (firstname, lastname, age, city, sport, activity) VALUES ('${req.body.firstname}', '${req.body.lastname}', ${req.body.age}), '${req.body.city}', '${req.body.sport}', '${req.body.activity}'`, (err, results) => {
+  postgres.query(`INSERT INTO offers (firstname, lastname, age, city, sport, activity) VALUES ('${req.body.firstname}', '${req.body.lastname}', '${req.body.age}', '${req.body.city}', '${req.body.sport}', '${req.body.activity}')`, (err, results) => {
   postgres.query('SELECT * FROM offers ORDER BY id ASC;', (err, results) => {
     console.log(err);
     res.redirect('/activities');
