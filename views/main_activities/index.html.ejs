@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+
+  </head>
+  <body>
+
+
+    <!-- MAIN STATIC STUFF  -->
+
+
+
+    <!-- ENTRIES -->
+      <h4>ENTRIES</h4>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Age</th>
+          <th scope="col">City</th>
+          <th scope="col">Sport</th>
+          <th scope="col">Activity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for (let i = 0; i < offers.length; i++) { %>
+          <tr>
+            <td><a href="/offers/<%= offers[i].id %>"><%= offers[i].firstname offers[i].lastname %></a> </td>
+            <td><%= offers[i].age %></td>
+            <td><%= offers[i].city %></td>
+            <td><%= offers[i].sport %></td>
+            <td><%= offers[i].activity %></td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+
+
+      <h4>I am offering!</h4>
+      <form action="/offers" method="POST">
+                <div class="form-group">
+                  <label for="firstname">FIRST NAME:</label>
+                  <input type="text" name="firstname" required />
+                  <label for="lastname">LAST NAME:</label>
+                  <input type="text" name="lastname" required />
+                  <label for="age">AGE:</label>
+                  <input type="number" name="age" />
+                  <label for="city">CITY:</label>
+                  <input type="text" name="city" required />
+                  <label for="sport">SPORT:</label>
+                  <input type="sport" name="sport" required />
+                  <label for="activity">ACTIVITY:</label>
+                  <input type="text" name="activity" required />
+                  <input type="submit" value="ADD" class="add-btn" />
+                </div>
+          </form>
+
+
+    <!-- FOOTER -->
+    <footer class="page-footer">
+
+    </footer>
+  </body>
+</html>
