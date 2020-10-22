@@ -19,7 +19,7 @@
 
     <div class="action-btns">
       <button type="button" name="button" class="edit-btn"><a href="/activities/<%=offer.rows[0].id%>/edit">EDIT</a></button>
-      <form action="/people/<%=offer.rows[0].id%>?_method=DELETE" method="POST" class="delete-btn">
+      <form action="/activities/<%=offer.rows[0].id%>?_method=DELETE" method="POST" class="delete-btn">
           <input type="submit" value="DELETE"/>
       </form>
     </div>

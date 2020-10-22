@@ -7,14 +7,14 @@
   <body>
 
     <div class="container">
-      <form action="/activities/offers/<%=offer.rows[0].id%>?_method=PUT" method="POST">
+      <form action="/activities/<%=offer.rows[0].id%>?_method=PUT" method="POST">
         <fieldset class="edit-info">
           <label for="firstname">FIRST NAME:</label>
           <input type="text" name="firstname" value="<%=offer.rows[0].firstname%>" /><br/>
           <label for="lastname">LAST NAME:</label>
           <input type="text" name="lastname" value="<%=offer.rows[0].lastname%>" /><br/>
           <label for="age">AGE:</label>
-          <input type="text" name="age" value="<%=offer.rows[0].age%>" /><br/>
+          <input type="number" name="age" value="<%=offer.rows[0].age%>" /><br/>
           <label for="city">CITY:</label>
           <input type="text" name="city" value="<%=offer.rows[0].city%>" /><br/>
           <label for="sport">SPORT:</label>
