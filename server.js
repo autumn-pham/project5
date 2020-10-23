@@ -20,7 +20,7 @@ app.use('/matches', matchesController);
 
 
 app.get('/' , (req, res) => {
-  res.redirect('/activities');
+  res.redirect('/offers');
 });
 
 postgres.connect();

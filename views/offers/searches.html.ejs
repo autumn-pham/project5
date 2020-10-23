@@ -1,29 +1,28 @@
 <div class="searches-display">
   <div class="searches-data">
     <h4>ENTRIES</h4>
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-          <th scope="col">Name</th>
-          <th scope="col">Age</th>
-          <th scope="col">City</th>
-          <th scope="col">Sport</th>
-          <th scope="col">Activity</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% for (let i = 0; i < searches.length; i++) { %>
-          <tr>
-            <td><a href="/activities/<%= searches[i].id %>"><%= searches[i].firstname%> <%=searches[i].lastname %></a> </td>
-            <td><%= searches[i].age %></td>
-            <td><%= searches[i].city %></td>
-            <td><%= searches[i].sport %></td>
-            <td><%= searches[i].activity %></td>
-          </tr>
-          <% } %>
-        </tbody>
-      </table>
-    </div>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">City</th>
+        <th scope="col">Sport</th>
+        <th scope="col">Activity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for (let i = 0; i < searches.length; i++) { %>
+        <tr>
+          <td><a href="/activities/<%= searches[i].id %>"><%= searches[i].fname%> <%=searches[i].lname %></a> </td>
+          <td><%= searches[i].age %></td>
+          <td><%= searches[i].city %></td>
+          <td><%= searches[i].sport %></td>
+          <td><%= searches[i].activity %></td>
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
 
 
     <div class="new-search-form">

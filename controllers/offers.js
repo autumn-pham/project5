@@ -45,6 +45,17 @@ offers.get('/', (req, res) => {
   });
 });
 
+// offers.get('/', (req, res) => {
+//   postgres.query('SELECT * FROM offers ORDER BY id ASC;', offers: results.rows (err, results) => {
+//   postgres.query('SELECT * FROM searches ORDER BY id ASC;', (err, results) => {
+//       res.render('offers/index.html.ejs', {searches: results.rows})
+//   });
+//   });
+// });
+
+
+
+
 // CREATE
 offers.post('/', (req, res) => {
   postgres.query(`INSERT INTO offers (firstname, lastname, age, city, sport, activity) VALUES ('${req.body.firstname}', '${req.body.lastname}', '${req.body.age}', '${req.body.city}', '${req.body.sport}', '${req.body.activity}')`, (err, results) => {
