@@ -31,7 +31,7 @@ SELECT * FROM searches;
 
 
 -- REWORKING SEARCHES TABLE FOR EASIER INDEX ROUTING
-CREATE TABLE searches (id SERIAL, fname VARCHAR(50), lname VARCHAR(50), age INT, city VARCHAR(50), sport VARCHAR(50), activity TEXT);
+CREATE TABLE searches (search_id SERIAL, fname VARCHAR(50), lname VARCHAR(50), age INT, city VARCHAR(50), sport VARCHAR(50), activity TEXT);
 
 INSERT INTO searches (fname, lname, age, city, sport, activity) VALUES ( 'Autumn', 'P', 29, 'Los Angeles', 'Muay Thai', 'pad work' );
 INSERT INTO searches (fname, lname, age, city, sport, activity) VALUES ( 'Anna', 'P', 35, 'Los Angeles', 'Muay Thai', 'pad work' );

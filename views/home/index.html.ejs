@@ -5,6 +5,60 @@
     <title></title>
   </head>
   <body>
-    
+    <div class="container">
+      <div class="data-display">
+        <div class="offers-display">
+          <h4>OFFERS</h4>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Age</th>
+                <th scope="col">City</th>
+                <th scope="col">Sport</th>
+                <th scope="col">Activity</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% for (let i = 0; i < offers.length; i++) { %>
+                <tr>
+                  <td><%= offers[i].firstname%> <%=offers[i].lastname %></td>
+                  <td><%= offers[i].age %></td>
+                  <td><%= offers[i].city %></td>
+                  <td><%= offers[i].sport %></td>
+                  <td><%= offers[i].activity %></td>
+                </tr>
+                <% } %>
+              </tbody>
+            </table>
+        </div>
+        <div class="searches-display">
+          <h4>ENTRIES</h4>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Age</th>
+              <th scope="col">City</th>
+              <th scope="col">Sport</th>
+              <th scope="col">Activity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% for (let i = 0; i < searches.length; i++) { %>
+              <tr>
+                <td><%= searches[i].fname%> <%=searches[i].lname %></td>
+                <td><%= searches[i].age %></td>
+                <td><%= searches[i].city %></td>
+                <td><%= searches[i].sport %></td>
+                <td><%= searches[i].activity %></td>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
   </body>
 </html>

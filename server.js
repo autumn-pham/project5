@@ -18,9 +18,11 @@ app.use('/searches', searchesController);
 const matchesController = require('./controllers/matches.js');
 app.use('/matches', matchesController);
 
+const homeController = require('./controllers/home.js');
+app.use('/home', homeController);
 
 app.get('/' , (req, res) => {
-  res.redirect('/offers');
+  res.redirect('/home');
 });
 
 postgres.connect();
