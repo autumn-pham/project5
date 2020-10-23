@@ -7,14 +7,14 @@
     <!-- NAV -->
       <%- include('../partials/nav.html.ejs') %>
       <!-- MAIN -->
+    <div class="container">
     <table class="table table-bordered">
       <thead>
         <tr>
           <th scope="col">NAME</th>
           <th scope="col">NAME</th>
           <th scope="col">CITY</th>
-          <th scope="col">SPORT</th>
-          <th scope="col">ACTIVITY</th>
+          <th scope="col">FOR</th>
         </tr>
       </thead>
       <tbody>
@@ -23,12 +23,12 @@
           <td><%= matches[i].firstname%> <%=matches[i].lastname %></td>
           <td><%= matches[i].fname%> <%=matches[i].lname %></td>
           <td><%= matches[i].city %></td>
-          <td><%= matches[i].sport %></td>
-          <td><%= matches[i].activity %></td>
+          <td><%= matches[i].sport %> <%= matches[i].activity %></td>
         </tr>
         <% } %>
       </tbody>
     </table>
+    </div>
     <!-- FOOTER -->
       <footer class="page-footer">
         <%- include('../partials/footer.html.ejs') %>
