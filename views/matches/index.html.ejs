@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Name</th>
+        <th scope="col">City</th>
+        <th scope="col">Sport</th>
+        <th scope="col">Activity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for (let i = 0; i < matches.length; i++) { %>
+        <tr>
+          <td><%= matches[i].firstname%> <%=matches[i].lastname %></td>
+          <td><%= matches[i].fname%> <%=matches[i].lname %></td>
+          <td><%= matches[i].city %></td>
+          <td><%= matches[i].sport %></td>
+          <td><%= matches[i].activity %></td>
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
+
+  </body>
+</html>

@@ -15,6 +15,9 @@ app.use('/offers', offersController);
 // const searchesController = require('./controllers/searches.js');
 // app.use('/searches', searchesController);
 
+const matchesController = require('./controllers/matches.js');
+app.use('/matches', matchesController);
+
 
 app.get('/' , (req, res) => {
   res.redirect('/activities');
