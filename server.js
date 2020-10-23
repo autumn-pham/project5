@@ -12,8 +12,8 @@ app.use(methodOverride('_method'));
 const offersController = require('./controllers/offers.js');
 app.use('/offers', offersController);
 
-// const searchesController = require('./controllers/searches.js');
-// app.use('/searches', searchesController);
+const searchesController = require('./controllers/searches.js');
+app.use('/searches', searchesController);
 
 const matchesController = require('./controllers/matches.js');
 app.use('/matches', matchesController);

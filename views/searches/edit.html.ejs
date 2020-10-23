@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <div class="container">
+      <form action="/searches/<%=search.rows[0].id%>?_method=PUT" method="POST">
+        <fieldset class="edit-info">
+          <label for="fname">FIRST NAME:</label>
+          <input type="text" name="fname" value="<%=search.rows[0].fname%>" /><br/>
+          <label for="lname">LAST NAME:</label>
+          <input type="text" name="lname" value="<%=search.rows[0].lname%>" /><br/>
+          <label for="age">AGE:</label>
+          <input type="number" name="age" value="<%=search.rows[0].age%>" /><br/>
+          <label for="city">CITY:</label>
+          <input type="text" name="city" value="<%=search.rows[0].city%>" /><br/>
+          <label for="sport">SPORT:</label>
+          <input type="text" name="sport" value="<%=search.rows[0].sport%>" /><br/>
+          <label for="activity">ACTIVITY:</label>
+          <input type="text" name="activity" value="<%=search.rows[0].activity%>" /><br />
+          <input type="submit" value="SUBMIT">
+        </fieldset>
+        </form>
+        <button type="button" name="button">
+          <a href="/searches">BACK</a>
+        </button>
+    </div>
+
+  </body>
+</html>

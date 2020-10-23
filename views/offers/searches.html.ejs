@@ -14,7 +14,7 @@
       <tbody>
         <% for (let i = 0; i < searches.length; i++) { %>
         <tr>
-          <td><a href="/activities/<%= searches[i].id %>"><%= searches[i].fname%> <%=searches[i].lname %></a> </td>
+          <td><a href="/searches/<%= searches[i].id %>"><%= searches[i].fname%> <%=searches[i].lname %></a> </td>
           <td><%= searches[i].age %></td>
           <td><%= searches[i].city %></td>
           <td><%= searches[i].sport %></td>
@@ -26,22 +26,16 @@
 
 
     <div class="new-search-form">
-      <h4>I am searching!</h4>
-      <form action="/activities" method="POST">
+      <h4>Searching for:</h4>
+      <form action="/offers" method="POST">
         <div class="form-group">
-          <label for="firstname">FIRST NAME:</label>
-            <input type="text" name="firstname" required /><br/>
-              <label for="lastname">LAST NAME:</label>
-              <input type="text" name="lastname" required /><br/>
-              <label for="age">AGE:</label>
-              <input type="number" name="age" /><br/>
-              <label for="city">CITY:</label>
-              <input type="text" name="city" required /><br/>
-              <label for="sport">SPORT:</label>
-              <input type="sport" name="sport" required /><br/>
-              <label for="activity">ACTIVITY:</label>
-              <input type="text" name="activity" required /><br/>
-              <input type="submit" value="ADD" class="add-btn" />
-              </div>
-          </form>
-      </div>
+          <input type="text" name="fname" placeholder="FIRST NAME" required /><br/>
+          <input type="text" name="lname" placeholder="LAST NAME" required /><br/>
+          <input type="number" name="age" placeholder="AGE"/><br/>
+          <input type="text" name="city" placeholder="CITY" required /><br/>
+          <input type="text" name="sport" placeholder="SPORT" required /><br/>
+          <input type="text" name="activity" placeholder="ACTIVITY" required /><br/>
+          <input type="submit" value="ADD" class="add-btn" />
+        </div>
+        </form>
+    </div>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <!-- MAIN STATIC STUFF -->
+    <div class="container">
+      <!-- SEARCHES -->
+      <div class="searches-display">
+        <div class="searches-data">
+          <h4>ENTRIES</h4>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Age</th>
+              <th scope="col">City</th>
+              <th scope="col">Sport</th>
+              <th scope="col">Activity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% for (let i = 0; i < searches.length; i++) { %>
+              <tr>
+                <td><a href="/searches/<%= searches[i].id %>"><%= searches[i].fname%> <%=searches[i].lname %></a> </td>
+                <td><%= searches[i].age %></td>
+                <td><%= searches[i].city %></td>
+                <td><%= searches[i].sport %></td>
+                <td><%= searches[i].activity %></td>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
+          </div>
+
+
+          <div class="new-search-form">
+            <h4>Searching for:</h4>
+            <form action="/searches" method="POST">
+              <div class="form-group">
+                <input type="text" name="fname" placeholder="FIRST NAME" required /><br/>
+                <input type="text" name="lname" placeholder="LAST NAME" required /><br/>
+                <input type="number" name="age" placeholder="AGE"/><br/>
+                <input type="text" name="city" placeholder="CITY" required /><br/>
+                <input type="text" name="sport" placeholder="SPORT" required /><br/>
+                <input type="text" name="activity" placeholder="ACTIVITY" required /><br/>
+                <input type="submit" value="ADD" class="add-btn" />
+              </div>
+              </form>
+              <!-- CLOSING OUT SEARCHES-DISPLAY -->
+          </div>
+
+
+          <!-- CLOSING OUT DATA-DISPLAY DIV -->
+          </div>
+          <a href="/matches">View matches</a>
+        <!-- CLOSING OUT CONTAINER DIV -->
+        </div>
+
+      <!-- FOOTER -->
+      <footer class="page-footer">
+
+      </footer>
+  </body>
+</html>
