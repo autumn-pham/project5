@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <title></title>
+    <%- include('../partials/head.html.ejs') %>
   </head>
   <body>
-
+    <!-- NAV -->
+      <%- include('../partials/nav.html.ejs') %>
+      <!-- MAIN -->
     <div class="container">
       <form action="/searches/<%=search.rows[0].id%>?_method=PUT" method="POST">
         <fieldset class="edit-info">
@@ -28,6 +29,9 @@
           <a href="/searches">BACK</a>
         </button>
     </div>
-
+    <!-- FOOTER -->
+    <footer class="page-footer">
+      <%- include('../partials/footer.html.ejs') %>
+    </footer>
   </body>
 </html>

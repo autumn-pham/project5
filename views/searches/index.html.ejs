@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <title></title>
+    <%- include('../partials/head.html.ejs') %>
   </head>
   <body>
+    <!-- NAV -->
+      <%- include('../partials/nav.html.ejs') %>
     <!-- MAIN STATIC STUFF -->
     <div class="container">
       <!-- SEARCHES -->
@@ -59,9 +60,9 @@
         <!-- CLOSING OUT CONTAINER DIV -->
         </div>
 
-      <!-- FOOTER -->
+        <!-- FOOTER -->
       <footer class="page-footer">
-
-      </footer>
+          <%- include('../partials/footer.html.ejs') %>
+        </footer>
   </body>
 </html>

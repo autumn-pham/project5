@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <title></title>
+    <%- include('../partials/head.html.ejs') %>
   </head>
   <body>
-
-
+    <!-- NAV -->
+      <%- include('../partials/nav.html.ejs') %>
+      <!-- MAIN -->
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -29,6 +29,9 @@
         <% } %>
       </tbody>
     </table>
-
+    <!-- FOOTER -->
+      <footer class="page-footer">
+        <%- include('../partials/footer.html.ejs') %>
+      </footer>
   </body>
 </html>

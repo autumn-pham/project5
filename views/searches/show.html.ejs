@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <title></title>
+    <%- include('../partials/head.html.ejs') %>
   </head>
   <body>
+    body>
+      <!-- NAV -->
+        <%- include('../partials/nav.html.ejs') %>
+        <!-- MAIN -->
     Name:<br/>
     <%=search.rows[0].fname%>   <%=search.rows[0].lname%><br/>
     Age:<br/>
@@ -23,6 +26,9 @@
           <input type="submit" value="DELETE"/>
       </form>
     </div>
-
+    <!-- FOOTER -->
+    <footer class="page-footer">
+      <%- include('../partials/footer.html.ejs') %>
+    </footer>
   </body>
 </html>

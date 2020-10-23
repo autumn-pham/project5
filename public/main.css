@@ -1,0 +1,49 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* NAV */
+nav img {
+  width: 50px;
+  height: 50px;
+}
+
+/* FOOTER */
+footer {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.footer1, .footer2, .footer3 {
+  width: 31%;
+}
+
+footer img {
+  width: 75px;
+  height: 75px;
+}
+
+footer a {
+  color: white;
+}
+
+.fa {
+  padding: .25em .5em 0 .5em;
+  color: white;
+}
+
+/* HOME PAGE */
+.data-display {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.offers-display, .searches.display {
+  width: 48%;
+  padding: 0 1em;
+}
