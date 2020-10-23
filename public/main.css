@@ -73,3 +73,28 @@ footer a {
 .banner h3 {
   padding: 2em;
 }
+
+/* OFFERS INDEX */
+
+.form-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: whitesmoke;
+  border: 1px solid gray;
+  border-radius: 15px;
+  margin-bottom: 2em;
+}
+
+.form-img {
+  background: url("https://i.ibb.co/HgSQ07p/IMG-2475.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 60%;
+}
+
+.new-form {
+  width: 37%;
+  align-self: center;
+  padding: 0 1em 0 1em;
+}
