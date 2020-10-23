@@ -2,6 +2,10 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+h1 {
+  font-family: 'Courgette', cursive;
+}
+
 a {
   color: black;
 }
@@ -50,4 +54,21 @@ footer a {
 .offers-display, .searches.display {
   width: 48%;
   padding: 0 1em;
+}
+
+.banner {
+  background-image: url("https://i.ibb.co/WfsB0gS/mitts.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+  text-align: center;
+  color: white;
+}
+
+.banner h1 {
+  padding: .5em 1em 2em 1em;
+}
+
+.banner h3 {
+  padding: 2em;
 }
