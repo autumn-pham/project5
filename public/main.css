@@ -168,3 +168,7 @@ footer a {
 .matches-table {
   margin-top: 1em;
 }
+
+.matches-header {
+  text-align: center;
+}
