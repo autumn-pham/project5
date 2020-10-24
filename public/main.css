@@ -74,6 +74,17 @@ footer a {
   padding: 2em;
 }
 
+.static-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.about, .works {
+  width: 48%;
+}
+
 /* OFFERS INDEX */
 
 .form-container {
