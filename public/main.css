@@ -2,7 +2,7 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
-h1 {
+h1, .search-data > h3, .offer-data > h3 {
   font-family: 'Courgette', cursive;
 }
 
@@ -108,7 +108,7 @@ footer a {
   background-color: whitesmoke;
   border: 1px solid gray;
   border-radius: 15px;
-  margin-bottom: 2em;
+  margin: 1em 0 1em 0;
 }
 
 .form-img {
@@ -123,6 +123,12 @@ footer a {
   width: 37%;
   align-self: center;
   padding: 0 1em 0 1em;
+}
+
+.match-btn {
+  border-radius: 15px;
+  margin-bottom: 1em;
+  text-align: center;
 }
 
 /* SHOW PAGES */
@@ -149,11 +155,15 @@ footer a {
 
  /* MATCHES */
  .carousel, .carousel-item > img {
-   max-width: 600px;
+   max-width: 700px;
    max-height: 700px;
    align: center;
  }
 
 .carousel {
   margin: auto;
+}
+
+.matches-table {
+  margin-top: 1em;
 }
