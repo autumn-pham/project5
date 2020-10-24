@@ -7,16 +7,18 @@
     <!-- NAV -->
       <%- include('../partials/nav.html.ejs') %>
       <!-- MAIN -->
-    Name:<br/>
-    <%=offer.rows[0].firstname%>   <%=offer.rows[0].lastname%><br/>
-    Age:<br/>
-    <%=offer.rows[0].age%><br/>
-    City:<br/>
-    <%=offer.rows[0].city%><br/>
-    Sport:<br/>
-    <%=offer.rows[0].sport%><br/>
-    Activity:<br/>
-    <%=offer.rows[0].activity%><br/>
+  <div class="card edit-card" style="width: 500px";>
+  <div class="card-body">
+    <h4>Name:</h4>
+    <h5><%=offer.rows[0].firstname%>   <%=offer.rows[0].lastname%></h5>
+    <h4>Age:</h4>
+    <h5><%=offer.rows[0].age%></h5>
+    <h4>City:</h4>
+    <h5><%=offer.rows[0].city%></h5>
+    <h4>Sport:</h4>
+    <h5><%=offer.rows[0].sport%></h5>
+    <h4>Activity:</h4>
+    <h5><%=offer.rows[0].activity%></h5>
 
 
     <div class="action-btns">
@@ -24,6 +26,9 @@
       <form action="/offers/<%=offer.rows[0].id%>?_method=DELETE" method="POST" class="delete-btn">
           <input type="submit" value="DELETE"/>
       </form>
+    </div>
+
+    </div>
     </div>
     <!-- FOOTER -->
       <footer class="page-footer">

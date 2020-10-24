@@ -4,21 +4,21 @@
     <%- include('../partials/head.html.ejs') %>
   </head>
   <body>
-    body>
       <!-- NAV -->
         <%- include('../partials/nav.html.ejs') %>
         <!-- MAIN -->
-    Name:<br/>
-    <%=search.rows[0].fname%>   <%=search.rows[0].lname%><br/>
-    Age:<br/>
-    <%=search.rows[0].age%><br/>
-    City:<br/>
-    <%=search.rows[0].city%><br/>
-    Sport:<br/>
-    <%=search.rows[0].sport%><br/>
-    Activity:<br/>
-    <%=search.rows[0].activity%><br/>
-
+  <div class="card edit-card" style="width: 500px";>
+    <div class="card-body">
+    <h4>Name: </h4>
+    <h5><%=search.rows[0].fname%>   <%=search.rows[0].lname%></h5>
+    <h4>Age:</h4>
+    <h5><%=search.rows[0].age%></h5>
+    <h4>City:</h4>
+    <h5><%=search.rows[0].city%><h5>
+    <h4>Sport:</h4>
+    <h5><%=search.rows[0].sport%><h5>
+    <h4>Activity:</h4>
+    <h5><%=search.rows[0].activity%></h5>
 
     <div class="action-btns">
       <button type="button" name="button" class="edit-btn"><a href="/searches/<%=search.rows[0].id%>/edit">EDIT</a></button>
@@ -26,6 +26,8 @@
           <input type="submit" value="DELETE"/>
       </form>
     </div>
+    </div>
+  </div>
     <!-- FOOTER -->
     <footer class="page-footer">
       <%- include('../partials/footer.html.ejs') %>
