@@ -56,4 +56,4 @@ AND offers.sport = searches.sport
 AND offers.activity = searches.activity
 
 -- USERS TABLE
-CREATE TABLE users (id NOT NULL, username TEXT NOT NULL UNIQUE, password TEXT NOT NULL, PRIMARY KEY(id))
+CREATE TABLE users (id SERIAL NOT NULL, username TEXT NOT NULL UNIQUE, password TEXT NOT NULL, PRIMARY KEY(id));
