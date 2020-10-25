@@ -120,6 +120,11 @@ footer a {
   width: 60%;
 }
 
+.search-form-img {
+  background: url("https://i.ibb.co/mHxpbnL/wrappinghands.jpg");
+  filter: grayscale(100%);
+}
+
 .new-form {
   width: 37%;
   align-self: center;

@@ -1,6 +1,6 @@
-const express = require('express')
-const sessions = express.Router()
-const passport = require('passport')
+const express = require('express');
+const sessions = express.Router();
+const passport = require('passport');
 
 sessions.get('/', (req, res) => {
     if (req.isAuthenticated()) {

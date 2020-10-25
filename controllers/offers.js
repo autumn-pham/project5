@@ -7,7 +7,7 @@ const postgres = require('../postgres.js');
 offers.get('/:id/edit', (req, res) => {
   postgres.query(`SELECT * FROM offers WHERE id = ${req.params.id};`, (err, results) => {
       res.render('offers/edit.html.ejs', {offer: results})
-      console.log(err)
+      // console.log(err)
   });
 });
 
@@ -32,7 +32,7 @@ offers.delete('/:id', (req, res) => {
 offers.put('/:id', (req, res) => {
     postgres.query(`UPDATE offers SET firstname = '${req.body.firstname}', lastname = '${req.body.lastname}', AGE = '${req.body.age}', CITY = '${req.body.city}', SPORT = '${req.body.sport}', ACTIVITY = '${req.body.activity}' WHERE id = ${req.params.id}`, (err, results) => {
         postgres.query('SELECT * FROM offers ORDER BY id ASC;', (err, results) => {
-          console.log(err)
+          // console.log(err)
           res.redirect('/offers');
         });
     })

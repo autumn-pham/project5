@@ -12,7 +12,7 @@ app.use(express.static('public'))
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 // app.use(session({
-//     secret: 'WhateverIWant',
+//     secret: process.env.SECRET,
 //     resave: false,
 //     saveUninitialized: true
 // }));
@@ -35,14 +35,13 @@ app.use('/home', homeController);
 // const usersController = require('./controllers/users.js');
 // app.use('/login', usersController);
 //
-// const sessionsController = require('./controllers/sessions.js', './passport.js');
+// const sessionsController = require('./controllers/sessions.js', './config/passport');
 // app.use('/register', sessionsController);
 //
 // app.use(function(req, res, next){
 //   res.locals.message = req.flash('message');
 //   next();
 // });
-
 
 app.get('/' , (req, res) => {
   res.redirect('/home');

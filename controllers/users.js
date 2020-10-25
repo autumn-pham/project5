@@ -1,6 +1,6 @@
-const express = require('express')
-const users = express.Router()
-const passport = require('passport')
+const express = require('express');
+const users = express.Router();
+const passport = require('passport');
 
 
 
@@ -49,4 +49,4 @@ users.get('/logout', (req, res) => {
     }
 })
 
-module.exports = users
+module.exports = users;
