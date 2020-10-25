@@ -1,5 +1,5 @@
-const bcrypt= require('bcryptjs')
-const client = require('./postgres.js')
+const bcrypt = require("bcrypt");
+const client = require('./postgres.js');
 
 var LocalStrategy = require('passport-local').Strategy
 
@@ -19,10 +19,10 @@ module.exports = function(passport) {
     function(req, username, password, done) {
         loginUser()
         async function loginUser() {
-            const client = await client.connect()
+            const pool = await client.connect()
             try {
-                await client.query('BEGIN')
-                var accData = await JSON.stringify(client.query('SELECT id, "username", "password" FROM "users" WHERE "username"=$1', [username], (err, result) => {
+                await pool.query('BEGIN')
+                var accData = await JSON.stringify(pool.query('SELECT id, "username", "password" FROM "users" WHERE "username"=$1', [username], (err, result) => {
                     if (err) {
                         return done(err)
                     }
@@ -52,6 +52,8 @@ module.exports = function(passport) {
     }))
 
     passport.use('register', new LocalStrategy({
+        firstNameField : 'first_name',
+        lastNameField : 'last_name',
         usernameField : 'username',
         passwordField : 'password',
         passReqToCallback : true
@@ -59,11 +61,11 @@ module.exports = function(passport) {
     function(req, username, password, done) {
         registerUser()
         async function registerUser() {
-            const client = await client.connect()
+            const pool = await client.connect()
             try {
-                await client.query('BEGIN')
+                await pool.query('BEGIN')
                 let passHash = await bcrypt.hash(req.body.password, 8)
-                await JSON.stringify(client.query('SELECT id FROM users WHERE username=($1)', [req.body.username], (err, result) => {
+                await JSON.stringify(pool.query('SELECT id FROM users WHERE username=($1)', [req.body.username], (err, result) => {
                     if (err) {
                         return done(err)
                     }
@@ -77,12 +79,12 @@ module.exports = function(passport) {
                         if (result.rows[0]) {
                             return done(null, false, req.flash('message', 'Sorry, this username is already taken.'))
                         } else {
-                            client.query('INSERT INTO users (id, username, password) VALUES ($1, $2, $3)', [uuidv4(), req.body.username, passHash], (err, result) => {
+                            pool.query('INSERT INTO users (id, first_name, last_name, username, password) VALUES ($1, $2, $3, $4, $5)', [ req.body.username, passHash], (err, result) => {
                                 if (err) {
                                     console.log(err)
                                 }
                                 else {
-                                    client.query('COMMIT')
+                                    pool.query('COMMIT')
                                     console.log('User [' + req.body.username + '] has registered.')
                                     //console.log(result)
                                     return done(null, {username: req.body.username})
@@ -97,6 +99,65 @@ module.exports = function(passport) {
             }
         }
     }))
+
+    passport.use('updatePassword', new LocalStrategy({
+        usernameField : 'password',
+        passwordField : 'newpass',
+        passReqToCallback : true
+    },
+    function(req, password, newpass, done) {
+        let username = (req.user.username).toLowerCase()
+        updatePassword()
+        async function updatePassword() {
+            const client = await pool.connect()
+            try {
+                await client.query('BEGIN')
+                let newPassHash = await bcrypt.hash(req.body.newpass, 8)
+                var accData = await JSON.stringify(client.query('SELECT id, "username", "password" FROM "users" WHERE "username"=$1', [req.user.username.toLowerCase()], (err, result) => {
+                    if (err) {
+                        return done(err)
+                    }
+
+                    if (!testPass(req.body.password) ) {
+                        return done(null, false, req.flash('message', 'Please provide a valid password'))
+                    } else if (!testPass(req.body.newpass)) {
+                        return done(null, false, req.flash('message', 'Please provide a valid password'))
+                    } else {
+                        if(result.rows[0] == null) {
+                            return done(null, false, req.flash('message', 'Error on changing password. Please try again'))
+                        } else {
+                            bcrypt.compare(req.body.password, result.rows[0].password, (err, valid) => {
+                                if (err) {
+                                    console.log("Error on current password validation")
+                                    return done(err)
+                                }
+                                if (valid) {
+                                    client.query('UPDATE users SET password=($1) WHERE username=($2)', [newPassHash, req.user.username], (err, result) => {
+                                        if (err) {
+                                            console.log(err)
+                                        }
+                                        else {
+                                            client.query('COMMIT')
+                                            console.log('User [' + req.user.username + '] has updated their password.')
+                                            //console.log(result)
+                                            return done(null, {username: req.user.username}, req.flash('message', 'Your password has been updated.'))
+                                        }
+                                    });
+                                } else {
+                                    req.flash('message', "Incorrect current password entered")
+                                    return done(null, false)
+                                }
+                            })
+                        }
+                    }
+                }))
+            }
+            catch(e) {
+                throw (e)
+            }
+        }
+    }))
+}
 
 function testUser(input) {
     let format = /^[a-zA-Z0-9_-]{4,16}$/
