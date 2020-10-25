@@ -47,6 +47,10 @@ app.get('/' , (req, res) => {
   res.redirect('/home');
 });
 
+app.get('/workouts' , (req, res) => {
+  res.render('workouts/index.html.ejs');
+});
+
 postgres.connect();
 
 app.listen(process.env.PORT || 3000, () => {

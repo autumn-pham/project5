@@ -183,3 +183,49 @@ footer a {
   text-align: center;
   padding-top: 1em;
 }
+
+/* WORKOUTS */
+.workout-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: black;
+}
+
+.img1 {
+  background-image: url("https://i.ibb.co/56KPxQC/flyingkick.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.img2 {
+  background-image: url("https://i.ibb.co/C6s3R1q/autumnjose.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.img3 {
+  background-image: url("https://i.ibb.co/HdtrjfK/sidekick.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.img1, .img2, .img3 {
+  width: 350px;
+  height: 450px;
+}
+
+.img1 img, .img2 img, .img3 img {
+  max-width: 300px;
+  max-height: 400px;
+}
+
+.img1, .img3 {
+  width: 23%;
+  filter: grayscale(100%);
+}
+
+.img2 {
+  width: 49%;
+  padding: 0;
+}
