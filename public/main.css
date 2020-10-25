@@ -102,6 +102,11 @@ footer a {
 
 /* INDEX PAGES */
 
+.search-data > h3, .offer-data > h3 {
+  text-align: center;
+  margin: .5em 0 .5em 0;
+}
+
 .form-container {
   display: flex;
   flex-direction: row;
