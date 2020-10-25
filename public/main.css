@@ -229,3 +229,20 @@ footer a {
   width: 50%;
   padding: 0;
 }
+
+.workout-text{
+  text-align: center;
+  margin: 1em 0 1em 0;
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 32%;
+  margin-bottom: 1em;
+}
