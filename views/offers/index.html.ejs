@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <%- include('../partials/head.html.ejs') %>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
     <!-- NAV -->
@@ -14,6 +15,7 @@
       <div class="offers">
         <div class="offer-data">
           <h3>Offer Listings</h3>
+          <div class="table-responsive">
             <table class="table table-bordered table-hover">
               <thead class="thead-dark">
                 <tr>
@@ -36,6 +38,7 @@
                 <% } %>
               </tbody>
             </table>
+          </div>
           </div>
 
             <div class="form-container">
