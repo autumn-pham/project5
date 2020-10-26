@@ -253,6 +253,9 @@ footer a {
 }
 
 @media (max-width: 375px) {
+  #desktop-display {
+    display: none;
+  }
   #mobile-display {
     display: block;
   }
