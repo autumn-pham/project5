@@ -144,9 +144,10 @@ footer a {
 
 /* SHOW PAGES */
 .edit-card {
+  width: 600px;
   text-align: center;
   align-self: center;
-  margin: 5em 15em 5em 15em;
+  margin: 2em 20em 2em 25em;
   background-image: url("https://i.ibb.co/hdB4dfp/Fitness-training-with-kettlebell-in-sport-gym-with-sunlight-effect.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -293,11 +294,9 @@ footer a {
   }
 
   .edit-card {
-    margin: 2em;
+    text-align: justify;
+    margin: .5em 0 .5em 0;
   }
 
-  .edit-card img {
-    max-width: 250px;
-  }
 
 }
