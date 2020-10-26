@@ -301,5 +301,7 @@ footer a {
     margin: .5em 0 .5em 0;
   }
 
-
+  .navbar-toggler {
+    margin: 0 0em 0 10em;
+  }
 }
