@@ -1,7 +1,7 @@
 const bcrypt = require("bcrypt");
 const client = require('./postgres.js');
 
-var LocalStrategy = require('passport-local').Strategy
+const LocalStrategy = require('passport-local').Strategy
 
 let accData = []
 
@@ -26,9 +26,8 @@ module.exports = function(passport) {
                     if (err) {
                         return done(err)
                     }
-
                     if (result.rows[0] == null) {
-					    return done(null, false, req.flash('message', "Incorrect username or password"))
+					                 return done(null, false, req.flash('message', "Incorrect username or password"))
                     } else {
                         bcrypt.compare(password, result.rows[0].password, (err, valid) => {
                             if (err) {

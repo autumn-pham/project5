@@ -3,14 +3,12 @@ const users = express.Router();
 const passport = require('passport');
 
 
-
 users.get('/', (req, res) => {
     if (req.isAuthenticated()) {
-        req.flash('message', 'Your are already logged in.')
-        res.redirect('/profile')
+        req.flash('message', 'You are already logged in.')
+        res.redirect('/home')
     } else {
         res.render('users/login.html.ejs', {
-            title: 'Login',
             user: req.user,
             message: res.locals.message
         })
@@ -20,7 +18,7 @@ users.get('/', (req, res) => {
 users.post('/', (req, res, next) => {
     if (req.isAuthenticated()) {
         req.flash('message', 'You are already logged in.')
-        res.redirect('/profile')
+        res.redirect('/home')
     } else {
         let user = (req.body.username).toLowerCase()
         let pass = req.body.password
