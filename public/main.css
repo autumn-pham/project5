@@ -304,4 +304,8 @@ footer a {
   .navbar-toggler {
     margin: 0 0em 0 10em;
   }
+
+  footer {
+    font-size: .5em;
+  }
 }
