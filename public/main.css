@@ -292,4 +292,12 @@ footer a {
     height: 50px;
   }
 
+  .edit-card {
+    margin: 2em;
+  }
+
+  .edit-card img {
+    max-width: 250px;
+  }
+
 }
