@@ -1,42 +1,38 @@
+const bcrypt = require('bcrypt');
 const express = require('express');
 const sessions = express.Router();
-const passport = require('passport');
+const postgres = require('./postgres.js');
 
-sessions.get('/', (req, res) => {
-    if (req.isAuthenticated()) {
-        res.redirect('/home')
-    } else {
-        res.render('users/register.html.ejs', {
-            title: 'Register',
-            user: req.user,
-            message: res.locals.message
-        })
-    }
+sessions.get('/register', (req, res) => {
+  res.render('users/register.html.ejs', {
+    currentUser:req.session.currentUser
+  })
 })
 
-sessions.post('/', (req, res, next) => {
-    if (req.isAuthenticated()) {
-        req.flash('message', 'You are already logged in.')
-        res.redirect('/home')
+
+sessions.post('/', (req, res) => {
+
+  postgres.query('SELECT id, "username", "password" FROM "users" WHERE "username"=$1', [username], (err, result) => {r) => {
+    if (err) {
+      console.log(err)
+      res.send('The database is down')
+    } else if (!foundUser) {
+      res.send('<a href="/register">Sorry, no user found. Please sign up. </a>')
     } else {
-        let user = (req.body.username).toLowerCase()
-        let pass = req.body.password
-        let passConf = req.body.passConf
-        if (user.length === 0 || pass.length === 0 || passConf.length === 0) {
-            req.flash('message', 'You must provide a username, password, and password confirmation.')
-            res.redirect('/login')
-        } else if (pass != passConf) {
-            req.flash('message', 'Your password and password confirmation must match.')
-            res.redirect('/login')
-        } else {
-            next()
-        }
+      if (bcrypt.compareSync(req.body.password, foundUser.password)) {
+        req.session.currentUser = foundUser
+        res.redirect('/')
+      } else {
+        res.send('<a href="/"> Your username or password does not match </a>')
+      }
     }
-}, passport.authenticate('register', {
-    successRedirect : '/home',
-    failureRedirect : '/register',
-    failureFlash : true
-}))
+  })
+})
 
+sessions.delete('/', (req, res) => {
+  req.session.destroy(() => {
+    res.redirect('/')
+  })
+})
 
-module.exports = sessions
+module.exports = sessions;

@@ -4,7 +4,7 @@ const methodOverride  = require('method-override');
 // const bcrypt = require("bcrypt");
 // const session = require('express-session');
 // const passport = require('passport');
-const flash = require('connect-flash');
+// const flash = require('connect-flash');
 const postgres = require('./postgres.js');
 // require('./passport.js')
 // require("dotenv").config();
@@ -35,7 +35,7 @@ app.use('/matches', matchesController);
 
 const homeController = require('./controllers/home.js');
 app.use('/home', homeController);
-
+// 
 // const usersController = require('./controllers/users.js');
 // app.use('/login', usersController);
 //

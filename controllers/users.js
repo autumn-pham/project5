@@ -1,50 +1,21 @@
+const bcrypt = require('bcrypt');
 const express = require('express');
 const users = express.Router();
-const passport = require('passport');
+const postgres = require('./postgres.js');
 
-
-users.get('/', (req, res) => {
-    if (req.isAuthenticated()) {
-        req.flash('message', 'You are already logged in.')
-        res.redirect('/home')
-    } else {
-        res.render('users/login.html.ejs', {
-            user: req.user,
-            message: res.locals.message
-        })
-    }
+users.get('/new', (req, res) => {
+  res.render('users/login.html.ejs', {
+    currentUser:req.session.currentUser
+  })
 })
 
-users.post('/', (req, res, next) => {
-    if (req.isAuthenticated()) {
-        req.flash('message', 'You are already logged in.')
-        res.redirect('/home')
-    } else {
-        let user = (req.body.username).toLowerCase()
-        let pass = req.body.password
-        if (user.length === 0 || pass.length === 0) {
-            req.flash('message', 'You must provide a username and password.')
-            res.redirect('/login')
-        } else {
-            next()
-        }
-    }
-}, passport.authenticate('login', {
-    successRedirect : '/home',
-    failureRedirect : '/login',
-    failureFlash : true
-}))
-
-
-
-users.get('/logout', (req, res) => {
-    if (req.isAuthenticated()) {
-        console.log('User [' + req.user.username + '] has logged out.')
-        req.logout()
-        res.redirect('/home');
-    } else {
-        res.redirect('/home')
-    }
+users.post('/', (req, res) => {
+  req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10))
+  User.create(req.body, (err, createdUser) => {
+    console.log('user created', createdUser)
+    res.redirect('/home')
+  })
 })
+
 
 module.exports = users;
