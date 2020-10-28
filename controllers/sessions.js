@@ -12,7 +12,7 @@ sessions.get('/register', (req, res) => {
 
 sessions.post('/', (req, res) => {
 
-  postgres.query('SELECT id, "username", "password" FROM "users" WHERE "username"=$1', [username], (err, result) => {r) => {
+  postgres.query('SELECT id, "username", "password" FROM "users" WHERE "username"=$1', [username], (err, result) => {
     if (err) {
       console.log(err)
       res.send('The database is down')
