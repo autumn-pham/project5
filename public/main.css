@@ -63,7 +63,7 @@ footer a {
   height: 400px;
   text-align: center;
   color: white;
-  opacity: 70%;
+  opacity: .7;
 }
 
 .banner h1 {
@@ -95,7 +95,7 @@ footer a {
   height: 350px;
   text-align: center;
   color: white;
-  opacity: 70%;
+  opacity: .7;
   margin-bottom: 1em;
 }
 
@@ -151,7 +151,7 @@ footer a {
   background-image: url("https://i.ibb.co/hdB4dfp/Fitness-training-with-kettlebell-in-sport-gym-with-sunlight-effect.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  opacity: 80%;
+  opacity: .8;
 }
 .action-btns {
   display: flex;
