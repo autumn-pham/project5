@@ -19,7 +19,7 @@ app.use(flash());
 app.use(express.json());
 app.use(methodOverride('_method'));
 app.use(session({
-    secret: WhateverIWant,
+    secret: process.env.SECRET,
     resave: false,
     saveUninitialized: false
 }));
