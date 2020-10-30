@@ -19,9 +19,9 @@ app.use(flash());
 app.use(express.json());
 app.use(methodOverride('_method'));
 app.use(session({
-    secret: process.env.SECRET,
+    secret: WhateverIWant,
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: false
 }));
 app.use(passport.initialize());
 app.use(passport.session());
