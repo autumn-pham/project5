@@ -8,20 +8,18 @@
       <%- include('../partials/nav.html.ejs') %>
       <div class="container">
         <div class="main-form login-form">
-          <h3>Login</h3>
+          <h3>Sign In</h3>
           <ul>
           <% if(messages.success_msg) { %>
             <li><%=messages.success_msg %></li>
           <% } %>
           </ul>
           <form action="/login" method="POST">
-            <label for="username">Username: </label>
-            <input type="text" id="username" name="username" autofocus><br />
-            <label for="password">Password: </label>
-            <input type="password" id="password" name="password"><br />
+            <input type="text" id="username" name="username" placeholder="username" autofocus><br />
+            <input type="password" id="password" name="password" placeholder="password"><br />
             <input class="submitButton" type="submit" value="LOGIN">
           </form>
-          <p>Or <a href="/register">register</a> if you do not have an account.</p>
+          <p>Or <a href="/register">SIGN UP</a> if you do not have an account.</p>
         </div>
       </div>
       <footer class="page-footer">

@@ -5,6 +5,7 @@
   </head>
   <body>
     <%- include('../partials/nav.html.ejs') %>
+    <div class="container">
     <div class="main-form register-form">
       <h3>Register</h3>
         <ul>
@@ -13,22 +14,18 @@
           <% }) %> <% } %>
         </ul>
         <form action="/register" method="POST">
-           <p>Username: 4-16 characters, a-Z, 0-9, underscores, and dashes</p>
-           <p>Pasword: 8-128 characters, REQUIRES 1 lowercase, uppercase, and digit</p>
-           <label for="first_name">First Name: </label>
-           <input type="text" id="first_name" name="first_name" autofocus> <br />
-           <label for="last_name">Last Name: </label>
-           <input type="text" id="last_name" name="last_name" autofocus> <br />
-           <label for="username">Username: </label>
-           <input type="text" id="username" name="username" autofocus> <br />
-           <label for="password">Password: </label>
-           <input type="password" id="password" name="password"> <br />
-           <label for="passConf">Confirm Password: </label>
-           <input type="password" id="passConf" name="passConf"><br />
+           <p>username: 4-16 characters, a-Z, 0-9, underscores, and dashes</p>
+           <p>password: 8-128 characters, REQUIRES 1 lowercase, uppercase, and digit</p>
+           <input type="text" id="first_name" name="first_name" placeholder="first name" autofocus> <br />
+           <input type="text" id="last_name" name="last_name" placeholder="last name" autofocus> <br />
+           <input type="text" id="username" name="username" placeholder="username" autofocus> <br />
+           <input type="password" id="password" name="password" placeholder="password"> <br />
+           <input type="password" id="passConf" name="passConf" placeholder="confirm password"><br />
            <input class="submitButton" type="submit" value="REGISTER">
           </form>
-           <p>Or <a href="/login">login</a> if you already have an account.</p>
+           <p>Or <a href="/login">SIGN IN</a> if you already have an account.</p>
         </div>
+      </div>
         <footer class="page-footer">
             <%- include('../partials/footer.html.ejs') %>
         </footer>
