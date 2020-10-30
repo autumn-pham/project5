@@ -1,4 +1,4 @@
-$(()=>{
+$(() => {
   $('.searches-search').on('submit', (event)=>{
     event.preventDefault();
     let userInput = $('input[type="text"]').val();
@@ -11,7 +11,14 @@ $(()=>{
     }).then(
       (data)=>{
         console.log(data)
-      })
+      },
+           (error) => { //fail callback
+               console.log(error);
+           }
+       )
 
-    })
+
+   })
+
+
 })

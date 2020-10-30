@@ -40,7 +40,7 @@ footer a {
 }
 
 .fa {
-  padding: 1em .5em 1em .5em;
+  padding: .25em;
   color: white;
 }
 
@@ -279,10 +279,10 @@ footer a {
     margin-bottom: 1em;
   }
   .footer1 {
-    padding: 2em 0 0 0;
+    padding: .75em 0 0 0;
   }
   .fa {
-    padding: 2em 0 0 0;
+    padding: .75em 0 0 0;
   }
   input {
     width: 120px;
