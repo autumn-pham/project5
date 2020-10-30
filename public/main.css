@@ -252,7 +252,7 @@ footer a {
   display: none;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 575px) {
   #desktop-display {
     display: none;
   }

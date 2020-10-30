@@ -47,6 +47,12 @@ app.get('/workouts' , (req, res) => {
   res.render('workouts/index.html.ejs');
 });
 
+app.get('/data', (req, res) => {
+  postgres.query('SELECT * FROM searches ORDER BY id ASC;', (err, results) => {
+      res.json(results)
+  });
+});
+
 app.get("/register", checkAuthenticated, (req, res) => {
   res.render("users/register.html.ejs");
 });
