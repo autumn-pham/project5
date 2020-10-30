@@ -7,6 +7,11 @@
     <%- include('../partials/nav.html.ejs') %>
     <div class="main-form register-form">
       <h3>Register</h3>
+        <ul>
+          <% if (typeof errors != 'undefined') { %> <% errors.forEach(error => { %>
+          <li><%= error.message %></li>
+          <% }) %> <% } %>
+        </ul>
         <form action="/register" method="POST">
            <p>Username: 4-16 characters, a-Z, 0-9, underscores, and dashes</p>
            <p>Pasword: 8-128 characters, REQUIRES 1 lowercase, uppercase, and digit</p>

@@ -1,5 +1,5 @@
 const LocalStrategy = require("passport-local").Strategy;
-const postgres = require('./postgres.js');
+const postgres = require("./postgres.js");
 const bcrypt = require("bcrypt");
 
 function initialize(passport) {
@@ -11,12 +11,13 @@ function initialize(passport) {
       [username],
       (err, results) => {
         if (err) {
+          console.log(err);
           throw err;
         }
 
         if (results.rows.length > 0) {
           const user = results.rows[0];
-
+          console.log(user)
           bcrypt.compare(password, user.password, (err, isMatch) => {
             if (err) {
               console.log(err);
@@ -49,6 +50,7 @@ function initialize(passport) {
   passport.deserializeUser((username, done) => {
     postgres.query(`SELECT * FROM users WHERE username = $1`, [username], (err, results) => {
       if (err) {
+        console.log(err);
         return done(err);
       }
       console.log(`Username is ${results.rows[0].username}`);

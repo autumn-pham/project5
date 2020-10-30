@@ -2,17 +2,16 @@ const PORT = process.env.PORT
 const express = require('express');
 const app = express();
 const methodOverride  = require('method-override');
-const bcrypt = require("bcrypt");
+const bcrypt = require('bcrypt');
 const session = require('express-session');
 const passport = require('passport');
-const flash = require('connect-flash');
+const flash = require('express-flash');
 const postgres = require('./postgres.js');
-require('./passport.js')
 require("dotenv").config();
-const initializePassport = require("./passport.js");
+const initializePassport = require('./passport.js');
 initializePassport(passport);
 
-
+app.set('view engine', 'ejs');
 app.use(express.json());
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
@@ -78,7 +77,7 @@ app.post("/register", async (req, res) => {
   }
 
   if (password.length < 8) {
-    errors.push({ message: "Password must be a least 8 characters long." });
+    errors.push({ message: "Password must be at least 8 characters long." });
   }
 
   if (password !== passConf) {
@@ -101,9 +100,8 @@ app.post("/register", async (req, res) => {
         console.log(results.rows);
 
         if (results.rows.length > 0) {
-          return res.render("users/register.html.ejs", {
-            message: "User already registered."
-          });
+          errors.push({message: "User already registered. Please log in."});
+          res.render("users/register.html.ejs", {errors});
         } else {
           postgres.query(
             `INSERT INTO users (first_name, last_name, username, password)

@@ -9,6 +9,11 @@
       <div class="container">
         <div class="main-form login-form">
           <h3>Login</h3>
+          <ul>
+          <% if(messages.success_msg) { %>
+            <li><%=messages.success_msg %></li>
+          <% } %>
+          </ul>
           <form action="/login" method="POST">
             <label for="username">Username: </label>
             <input type="text" id="username" name="username" autofocus><br />
