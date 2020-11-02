@@ -76,7 +76,7 @@ $('.offers-search').on('submit', (event)=>{
       for(let i=0; i < offerData.length; i++){
         let newDiv = $('<div>').addClass('card search-card').attr('id', i)
         let newName = $('<h5>').text(offerData[i].firstname + " " + offerData[i].lastname).css('text-align', 'center').addClass('card-body card-text')
-        let newText = $('<p>').text("is searching for some").css('text-align', 'center').addClass('card-body card-text')
+        let newText = $('<p>').text("is offering some").css('text-align', 'center').addClass('card-body card-text')
         let newSport = $('<p>').text(offerData[i].sport + " " + offerData[i].activity).css('text-align', 'center').addClass('card-body card-text')
         $('main').append(newDiv)
         newDiv.append(newName)

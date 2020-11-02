@@ -136,9 +136,42 @@ footer a {
   padding: 0 1em 0 1em;
 }
 
+
+.offers-search, .searches-search {
+  margin: 1em 0;
+  text-align: center;
+}
+
+.searches-main, .offers-main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.search-card {
+  width: 31%;
+  border: 1px solid black;
+  box-shadow: 5px 10px black;
+  background-image: url('https://i.ibb.co/vxCp53P/Los-Angeles.jpg');
+  background-size: cover;
+  opacity: .5;
+  font-weight: bold;
+  color: white;
+}
+
+.search-card h5 {
+  margin-bottom: .5em;
+}
+
+.search-card p {
+  margin: 0;
+  padding: 0;
+}
+
 .match-btn {
   border-radius: 15px;
-  margin-bottom: 1em;
+  margin: 1em 0;
   text-align: center;
 }
 
@@ -315,6 +348,10 @@ footer a {
 
   .navbar-toggler {
     margin: 0 0em 0 10em;
+  }
+
+  .text-submit-searches, .search-btn, .reset-btn {
+    width: 95%;
   }
 
   footer {
