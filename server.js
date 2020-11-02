@@ -47,8 +47,14 @@ app.get('/workouts' , (req, res) => {
   res.render('workouts/index.html.ejs');
 });
 
-app.get('/data', (req, res) => {
+app.get('/data/searches', (req, res) => {
   postgres.query('SELECT * FROM searches ORDER BY id ASC;', (err, results) => {
+      res.json(results)
+  });
+});
+
+app.get('/data/offers', (req, res) => {
+  postgres.query('SELECT * FROM offers ORDER BY id ASC;', (err, results) => {
       res.json(results)
   });
 });
